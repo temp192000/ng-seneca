@@ -1,0 +1,67 @@
+<p>binding works!</p>
+
+<h3>1. Interpolation/Expression</h3>
+
+<p>{{ message.toUpperCase() }}</p>
+
+<p>{{ greet() }}</p>
+<p>{{ greetUser("Ranjith") }}</p>
+
+<p>{{ skills[2] }}</p>
+<p>{{ this.user.city }}</p>
+<p>{{ products[0].id }}</p>
+<p>{{ products[0].name }}</p>
+<!-- <p>{{products[0].id, products[0].name}}</p> -->
+
+<h3>2. Property Binding</h3>
+
+<img [src]="imgSRC" alt="kittyImages" />
+<br />
+<button type="button" [disabled]="isLoggedIn">Login</button>
+<br />
+<br />
+
+<div [innerText]="message"></div>
+<br />
+<div [innerHTML]="customHTML"></div>
+<br />
+<input type="text" [value]="dummyInput" />
+<br />
+<br />
+<!-- <p [hidden]="isValid()">Errors exist</p> -->
+
+<!-- [21OCT] Activity - 2 -->
+
+<!-- 2. Toggle the label of a button between login and logout every 2 secs. -->
+
+<button>{{ btn2S }}</button>
+<br />
+<br />
+
+<!-- 3. Enable/disable a button once in every 5 secs. -->
+
+<button [disabled]="btn5S">5s BTN</button>
+<br />
+<br />
+
+<h3>3. Event Binding</h3>
+
+<!-- <div (mouseover)="showalert()">Hover here</div>
+<div (mouseenter)="changeMessage()" (mouseleave)="restoreMessage()">{{ magicaltext}}</div> -->
+
+<!-- <div
+  (mouseenter)="mouseEventText = $e.target.vale"
+  (mouseleave)="restoreMessage()"
+>
+  {{ mouseEventText }}
+</div> -->
+
+<div>Enter your name: <input (input)="updateInput($event)" type="text" /></div>
+<div>Hiya, {{ userIn }}</div>
+
+<h3>4. Two-Way Binding</h3>
+
+<div>
+  Enter a city: <input [(ngModel)]="userCity" type="text" /> CityName:
+  {{ userCity }}; Recommended Visit:{{ recResult() }}
+</div>

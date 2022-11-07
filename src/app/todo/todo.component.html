@@ -1,0 +1,28 @@
+<p>todo works!</p>
+
+<!-- 2. Give an option button to display 2 choices - completed, pending.
+
+Based on the selection, display the todos which are completed or pending
+
+https://jsonplaceholder.typicode.com/todos?completed=true
+https://jsonplaceholder.typicode.com/todos?completed=false
+
+ -->
+
+<button (click)="retrieveCompleted()">Show Completed Tasks</button>
+<button (click)="retrievePending()">Show Pending Tasks</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Task Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of todoList">
+      <td scope="row">{{ task.title }}</td>
+      <td>{{ task.completed }}</td>
+    </tr>
+  </tbody>
+</table>

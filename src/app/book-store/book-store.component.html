@@ -1,0 +1,66 @@
+<p>book-store works!</p>
+<!-- 27 OCT Activity -->
+<!-- <div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Subtitle</th>
+        <th scope="col">Pages</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Website</th>
+        <th scope="col">Product Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of book" class="">
+        <td scope="row">{{ item.isbn }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.subtitle }}</td>
+        <td>{{ item.pages }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.author }}</td>
+        <td>{{ item.publisher }}</td>
+        <td>{{ item.website }}</td>
+        <td>{{ item.pages | deliveryMSystem }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<!-- 28 OCT Activity -->
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Cover Image</th>
+        <th scope="col">Pages</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Product Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of book" class="">
+        <td scope="row">{{ item.isbn }}</td>
+        <td>{{ item.title }}</td>
+        <td *ngIf="item.cover_image != ''">
+          <img
+            src="{{ item.cover_image }}"
+            height="150"
+            width="150"
+            alt="use *ngIf"
+          />
+        </td>
+        <td *ngIf="item.cover_image == ''">No preview available</td>
+        <td>{{ item.pages }}</td>
+        <td>{{ item.releaseDate }}</td>
+        <td>{{ item.pages | deliveryMSystem }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

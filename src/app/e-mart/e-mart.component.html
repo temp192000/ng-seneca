@@ -1,0 +1,31 @@
+<p>e-mart works!</p>
+
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Category</th>
+        <th scope="col">Image</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let products of productList">
+        <td scope="row">{{ products.id }}</td>
+        <td>{{ products.category }}</td>
+        <td>
+          <img
+            src="{{ products.image }}"
+            height="200"
+            width="200"
+            alt="productImage"
+          />
+        </td>
+        <td>{{ products.title }}</td>
+        <td>{{ products.price | currency: "INR" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

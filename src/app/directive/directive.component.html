@@ -1,0 +1,52 @@
+<p>directive works!</p>
+
+<!-- Activity - 3 -->
+<!-- 1. Add bootstrap CDN link to index.html -->
+<!-- 2. Type bs5-table-default and enter -->
+
+<!-- 3.  <tr *ngFor="let prod of products"> -->
+<!-- 4. Apply bootstrap table related classes
+    <table class="table table-hover"> -->
+<!-- 5. Display image, rating and category of each product -->
+<!-- 6. Add a button to show/hide to display/hide the price -->
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">ID</th>
+        <th scope="col">Image</th>
+        <th scope="col">Title</th>
+        <th scope="col">Rating</th>
+        <th scope="col">
+          <button (click)="changePriceState()">Show/Hide Price</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of productsDB" class="">
+        <td scope="row">{{ prod.category }}</td>
+        <td>{{ prod.id }}</td>
+        <td><img [src]="prod.image" alt="" height="100px" width="100px" /></td>
+        <td>{{ prod.title }}</td>
+        <td>{{ prod.rating.rate }}</td>
+        <td *ngIf="showPrice">{{ prod.price }}</td>
+        <td *ngIf="!showPrice">****</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div [ngStyle]="{ 'font-size.px': txtSize }">
+  Kitty City
+  <button (click)="txtSize = txtSize * 2">➕</button>
+  <button (click)="txtSize = txtSize / 2">➖</button>
+</div>
+
+<br />
+
+<div [ngClass]="{ normie: !premiumUser, chad: premiumUser }">
+  Cats with confusing auras
+</div>
+<button (click)="premiumUser = !premiumUser">uwu</button>
